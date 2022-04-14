@@ -1,0 +1,28 @@
+.product-add {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+
+    .label-wrapper {
+        margin: 20px;
+
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+
+        .description-input {
+            height: 100px;
+
+            resize: none;
+        }
+    }
+
+    .small-input-wrapper {
+        display: flex;
+        flex-direction: row;
+    }
+
+    button {
+        margin: 20px;
+    }
+}

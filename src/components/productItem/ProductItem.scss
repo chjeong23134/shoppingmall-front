@@ -1,0 +1,40 @@
+.product-item {
+    height: 250px;
+    width: 200px;
+
+    border: 1px solid #94BDF2;
+
+    display: flex;
+    flex-direction: column;
+
+    .product-image {
+        margin: 10px;
+
+        display: flex;
+        flex: 1;
+
+        img {
+            width: 180px;
+            height: 150.5px;
+
+            border: 1px solid #94BDF2;
+
+            display: flex;
+            flex: 1;
+        }
+    }
+
+    .product-name {
+        margin: 5px auto 5px auto;
+    }
+
+    .product-price {
+        margin: 0px auto 5px auto;
+    }
+
+    .product-date {
+        margin: 5px auto 5px auto;
+
+        font-size: small;
+    }
+}

@@ -1,0 +1,38 @@
+// 상품수정 절차 수정
+
+
+// 받을 form data
+{
+    req: {
+        id: 상품아이디,
+        name: 상품이름,
+        description: 상품설명,
+        price: 상품가격,
+        sort: 상품카테고리,
+        stock: 상품재고,
+        imageIds: 수정될 이미지들 ex) [0,2,4,5,6]
+    }
+
+    images: 5개 <첫번째가 썸네일>
+}
+
+
+// forEach 처리로직
+int idx = 0;
+
+for(int iamgeId : imageIds) {
+    // images[idx] 이미지 저장
+
+    // imageId 로 검색해서 기존에 저장되어있던 이미지경로 수정
+
+    // idx++
+}
+
+
+// for 처리로직
+for(int idx = 0; i < imageIds.length; idx++) {
+    // images[idx] 이미지 저장
+
+    // imageIds[idx]로 검색해서 기존에 저장되어있던 이미지경로 수정
+}
+
