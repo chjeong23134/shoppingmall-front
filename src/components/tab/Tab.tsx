@@ -1,15 +1,13 @@
 import './Tab.scss';
 
-interface Types {
-    children?: React.ReactNode;
+interface PropType {
+    children?: React.ReactNode
 }
 
-function Tab(props: Types) {
+export default function Tab(props: PropType) {
     return (
         <div className='tab'>
             {props.children}
         </div>
     )
 }
-
-export default Tab;

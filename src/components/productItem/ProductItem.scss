@@ -1,11 +1,13 @@
 .product-item {
-    height: 250px;
     width: 200px;
-
-    border: 1px solid #94BDF2;
+    margin: 5px;
+    border: 1px solid #127369;
+    border-radius: 5px;
 
     display: flex;
     flex-direction: column;
+
+    background-color: white;
 
     .product-image {
         margin: 10px;
@@ -17,7 +19,7 @@
             width: 180px;
             height: 150.5px;
 
-            border: 1px solid #94BDF2;
+            border: 1px solid #127369;
 
             display: flex;
             flex: 1;

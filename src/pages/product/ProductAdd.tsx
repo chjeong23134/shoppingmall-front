@@ -1,10 +1,10 @@
 import './ProductAdd.scss';
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import { productApi } from '../../apis/productApi';
 
-function ProductAdd() {
+export default function ProductAdd() {
     const [name, setName] = useState<string>('');
     const [description, setDescription] = useState<string>('');
     const [price, setPrice] = useState<number>(0);
@@ -62,5 +62,3 @@ function ProductAdd() {
         </div>
     )
 }
-
-export default ProductAdd;

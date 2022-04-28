@@ -1,21 +1,21 @@
-
 import './Product.scss';
 
-import { Outlet, useNavigate } from "react-router-dom";
+import { Outlet, Route, useNavigate } from "react-router-dom";
 
+import { RouteType } from '../../types/RouteType';
 import Tab from "../../components/tab/Tab";
 
-function Product() {
+export default function Product() {
     const history = useNavigate();
 
     return (
         <div className="product">
             <Tab>
-                <div className='link' onClick={() => history('add')}>
+                <div className='link' onClick={() => history(RouteType.PRODUCTADD)}>
                     Add
                 </div>
 
-                <div className='link' onClick={() => history('list')}>
+                <div className='link' onClick={() => history(RouteType.PRODUCTLIST)}>
                     List
                 </div>
             </Tab>
@@ -23,5 +23,3 @@ function Product() {
         </div>
     )
 }
-
-export default Product;

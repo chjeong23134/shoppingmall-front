@@ -1,7 +1,6 @@
 import './App.scss';
 
 import {
-	BrowserRouter as Router,
 	Routes,
 	Route,
 	useNavigate
@@ -13,8 +12,9 @@ import Tab from './components/tab/Tab';
 import Product from './pages/product/Product';
 import ProductAdd from './pages/product/ProductAdd';
 import ProductList from './pages/product/ProductList';
+import { RouteType } from './types/RouteType';
 
-function App() {
+export default function App() {
 	const history = useNavigate();
 
 	return (
@@ -31,13 +31,12 @@ function App() {
 			</Tab>
 
 			<Routes>
-				<Route path='product' element={<Product />}>
-					<Route path='add' element={<ProductAdd />} />
-					<Route path='list' element={<ProductList />} />
+				<Route path={RouteType.PRODUCT} element={<Product />}>
+					<Route path={RouteType.PRODUCTADD} element={<ProductAdd />}/>
+					<Route path={RouteType.PRODUCTLIST} element={<ProductList />}/>
 				</Route>
+				<Route path={RouteType.USER} element={<div/>}/>
 			</Routes>
 		</div>
 	);
 }
-
-export default App;

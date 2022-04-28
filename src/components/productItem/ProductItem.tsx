@@ -1,20 +1,63 @@
 import './ProductItem.scss';
 
+import { useState } from 'react';
 import moment from 'moment';
 
 import { productApi } from '../../apis/productApi';
 
+import ProductDetail from '../../pages/product/ProductDetail';
+import Modal from '../modal/Modal';
+import ProductModify from '../../pages/product/ProductModify';
 
 interface PropType {
+    id: number,
     name: string,
+    sort: string,
     price: number,
     date: Date,
     thumbnailImageId: number
 }
 
-function ProductItem(prop: PropType) {
+enum ModalType {
+    DETAIL,
+    MODIFY
+}
+
+export default function ProductItem(prop: PropType) {
+    const [showModal, setShowModal] = useState<Boolean>(false);
+    const [modalType, setModalTpye] = useState<ModalType>(ModalType.DETAIL);
+    
     return (
-        <div className='product-item'>
+        <div className='product-item' onClick={() => {setShowModal(true)}}>
+            {
+                showModal
+                    ?
+                        (
+                            <Modal closeModal={() => setShowModal(false)}>
+                                {
+                                    modalType === ModalType.DETAIL
+                                        ? (
+                                            <ProductDetail
+                                                id={prop.id}
+                                            />
+                                        )
+                                        : modalType === ModalType.MODIFY
+                                            ? (
+                                                <ProductModify
+                                                    id={prop.id}
+                                                />
+                                            )
+                                            : null
+                                }
+                            </Modal>
+                        )
+                    : null
+            }
+            
+            <div className='product-sort'>
+                {prop.sort}
+            </div>
+            
             <div className='product-image'>
                 <img src={productApi.imageDetail(prop.thumbnailImageId)}/>
             </div>
@@ -33,5 +76,3 @@ function ProductItem(prop: PropType) {
         </div>
     )
 }
-
-export default ProductItem;

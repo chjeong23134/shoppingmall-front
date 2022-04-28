@@ -4,11 +4,15 @@
 
     .link {
         height: 50px;
-        border: 1px solid #94BDF2;
+        margin: 10px;
+        border: 1px solid #8AA6A3;
+        border-radius: 5px;
 
         display: flex;
         flex: 1;
         align-items: center;
         justify-content: center;
+
+        background-color: white;
     }
 }

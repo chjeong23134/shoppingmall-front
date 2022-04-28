@@ -1,0 +1,61 @@
+.modal {
+    width: 100%;
+    height: 100%;
+
+    left: 0;
+    top: 0;
+    position: fixed;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: auto;
+
+    .modal-content {
+        max-width: 700px;
+        max-width: 70%;
+        height: 600px;
+        padding: 20px;
+        border-radius: 5px;
+
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+
+        background-color: aliceblue;
+
+        .close-button {
+            margin-right: 10px;
+
+            text-align: right;
+
+            color: #4C5958;
+            font-size: xx-large;
+        }
+
+        .boundary {
+            width: 100%;
+            margin: 0 auto;
+            border: 1px solid #4C5958;
+        }
+    }
+}
+
+.modal::after {
+    content: '';
+
+    width: 100%;
+    height: 100%;
+
+    left: 0;
+    top: 0;
+    position: fixed;
+    z-index: -1;
+
+    overflow: auto;
+
+    opacity: 0.3;
+
+    background-color: #10403B;
+}

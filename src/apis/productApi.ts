@@ -1,25 +1,7 @@
 import axios from "axios";
+import { DetailResponseType, ListResponseType } from "../types/PropType";
 
 const ip = 'http://localhost:8080/product';
-
-interface ResponseType {
-    data: Array<ProductType>,
-    message: string,
-    status: string
-}
-
-interface ProductType {
-    id: number,
-    name: string,
-    description: string,
-    price: number,
-    sort: string,
-    stock: number,
-    createDate: Date,
-    updateDate: Date,
-    isDeleted: string,
-    thumbnailImageId: number
-}
 
 function add(
     name: string,
@@ -55,21 +37,32 @@ function add(
     });
 }
 
-function listBySort(sort: string): Promise<ResponseType> {
+function listByName(name: string): Promise<ListResponseType> {
+    return axios({
+        url: ip + '/list-name/' + name
+    }).then(res => res.data);
+}
+
+function listBySort(sort: string): Promise<ListResponseType> {
     return axios({
         url: ip + '/list-sort/' + sort
     }).then(res => res.data);
 }
 
+function detail(id: number): Promise<DetailResponseType> {
+    return axios({
+        url: ip + '/detail/' + id
+    }).then(res => res.data);
+}
+
 function imageDetail(id: number): string {
-    // axios({
-    //     url: ip + '/image/' + id
-    // });
     return ip + '/image/' + id;
 }
 
 export const productApi = {
     add,
     listBySort,
+    listByName,
+    detail,
     imageDetail
 }
